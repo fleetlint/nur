@@ -11,22 +11,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "1mp6lsbzl38cgjybykz5jpfj650p1968lhrzbc250i1bjzk2mzmj";
-    aarch64-linux = "0mcr3lvfr17aacmbzdqi6p66nc5hmas3bcpqml802qjng0fyqqz8";
-    x86_64-darwin = "1cwyvpwlyw4xd7k8msv6k7nxnk3yh3vikhj582nbpka48sns657w";
-    aarch64-darwin = "0zsspxa2sp49zfd54g7gcyzqv3yp10sascbfq937sjx56l04z2ly";
+    x86_64-linux = "04n59q60wij2jqfgr50sg7cxzlqp4b896g8z68mbcz9r2kx5ijl7";
+    aarch64-linux = "0fgb2g940bfn8s1jv9fh8aghj3m313ndv1vdw15khgmlk8j4dg42";
+    x86_64-darwin = "1ky5a7168lwfd9d456zzq7h02krq9ya1qdvlqz8qa2k3n2v8a61v";
+    aarch64-darwin = "1jp4g6yggj297i7jy6f31zdxm3rf1ccv98nvhxy1nz37ii4zm720";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/fleetlint/fleetlint/releases/download/v0.4.1/fleetlint_0.4.1_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/fleetlint/fleetlint/releases/download/v0.4.1/fleetlint_0.4.1_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/fleetlint/fleetlint/releases/download/v0.4.1/fleetlint_0.4.1_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/fleetlint/fleetlint/releases/download/v0.4.1/fleetlint_0.4.1_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/fleetlint/fleetlint/releases/download/v0.5.0/fleetlint_0.5.0_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/fleetlint/fleetlint/releases/download/v0.5.0/fleetlint_0.5.0_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/fleetlint/fleetlint/releases/download/v0.5.0/fleetlint_0.5.0_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/fleetlint/fleetlint/releases/download/v0.5.0/fleetlint_0.5.0_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "fleetlint";
-  version = "0.4.1";
+  version = "0.5.0";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
